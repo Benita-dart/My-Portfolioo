@@ -75,22 +75,35 @@ body {
 /* Hamburger Menu Styles */
 .header .mobile-menu {
     display: none; /* Hide by default on larger screens */
+    cursor: pointer;
 }
 
 .header .nav-links {
+    display: none;
+}
+
+.header .nav-links.active {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    background: #1e2852;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999;
 }
 
-.header .nav-links li {
-    display: inline;
-    margin-right: 20px;
+.header .nav-links.active li {
+    text-align: center;
 }
 
-.header .nav-links li a {
+.header .nav-links.active li a {
     color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+}
+
+.header .nav-links.active li a:hover {
+    color: #ccc;
 }
 
 /* Hamburger Animation */
@@ -369,40 +382,39 @@ button[type="submit"]:hover {
     }
 
     .header nav .nav-links {
-        display: none; /* Hide navigation links by default on smaller screens */
+        display: none; /* Hide nav links by default on smaller screens */
         flex-direction: column;
         width: 100%;
-        text-align: center;
-        background-color: #1e2852;
+        background: #1e2852;
         position: absolute;
         top: 100%;
         left: 0;
-        z-index: 10;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+        z-index: 999;
     }
 
     .header nav .nav-links.active {
-        display: flex; /* Show nav links when active (hamburger menu clicked) */
+        display: flex;
+    }
+
+    .header nav .nav-links li {
+        text-align: center;
+        margin: 10px 0;
     }
 
     .header .mobile-menu {
-        display: flex; /* Display hamburger menu button */
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.3s ease;
     }
 
-    .header .nav-links li {
-        display: block;
-        margin-bottom: 10px;
+    .header .nav-links {
+        display: none;
     }
 
-    .header .nav-links li a {
-        color: #fff;
-        padding: 10px;
-        border-radius: 3px;
-        transition: background-color 0.3s ease;
-    }
-
-    .header .nav-links li a:hover {
-        background-color: #304873;
+    .header .nav-links.active {
+        display: flex;
     }
 
     .header .bar {
@@ -453,9 +465,5 @@ button[type="submit"]:hover {
 
     .portfolio-item h3 {
         font-size: 18px; /* Reduce portfolio item title font size on smaller screens */
-    }
-
-    .back-to-top-btn {
-        display: block; /* Show back-to-top button on smaller screens */
     }
 }

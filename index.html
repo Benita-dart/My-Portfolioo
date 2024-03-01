@@ -123,7 +123,11 @@
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top-btn" class="btn back-to-top-btn">Back to Top</button>
+    <button id="back-to-top-btn" class="back-to-top-btn" onclick="topFunction()" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.646 10.854a.5.5 0 0 0 .708 0L8 7.207l2.646 2.647a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 0 0 0 .708z"/>
+        </svg>
+    </button>
 
     <!-- Custom Script for Typing Effect and Back to Top Button -->
     <script>
@@ -146,11 +150,11 @@
             }
         });
 
-        backToTopBtn.addEventListener("click", function() {
-            // Scroll to the top of the document
+        // Scroll to the top function
+        function topFunction() {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
-        });
+        }
     </script>
 </body>
 </html>

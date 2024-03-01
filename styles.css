@@ -1,178 +1,139 @@
-@keyframes slideIn {
+/* Hamburger Menu Styles */
+#menu-toggle {
+    display: none; /* Hide the checkbox */
+  }
+  
+  /* Hamburger Icon Styles */
+  .menu-icon {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Slide-in Menu Styles */
+  .header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: none; /* Hide the menu by default */
+  }
+  
+  /* Show Menu when Checkbox is checked */
+  #menu-toggle:checked + .header nav ul {
+    display: block;
+    animation: slideIn 0.5s forwards;
+  }
+  
+  /* Slide-in Animation */
+  @keyframes slideIn {
     0% {
-        opacity: 0;
-        transform: translateY(50px);
+      opacity: 0;
+      transform: translateY(-50px);
     }
     100% {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-.slide-in {
-    animation: slideIn 0.5s forwards;
-}
-
-/* Reset CSS */
-* {
+  }
+  
+  /* Reset CSS */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Global Styles */
-body {
+  }
+  
+  /* Global Styles */
+  body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-}
-
-.container {
+  }
+  
+  .container {
     max-width: 960px;
     margin: 0 auto;
     padding: 20px;
-}
-
-/* Header Styles */
-.header {
+  }
+  
+  /* Logo Styles */
+  .logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+  }
+  
+  /* Header Styles */
+  .header {
     background: #1e2852;
     color: #fff;
     padding: 20px 0;
-}
-
-.header .logo {
-    width: 150px; /* Adjust size as needed */
-    height: auto;
-}
-
-.header .header-content {
+  }
+  
+  .header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+  }
+  
+  .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Aligns content to the left and right edges */
-}
-
-.header .header-info {
+  }
+  
+  .header-info {
     flex: 1;
-}
-
-.header nav .nav-links {
-    display: flex;
-    align-items: center;
-}
-
-.header nav .nav-links li {
+  }
+  
+  .header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Aligns nav items to center */
+  }
+  
+  .header nav ul li {
     display: inline;
     margin-right: 20px;
-}
-
-.header nav .nav-links li a {
+  }
+  
+  .header nav ul li a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-/* Hamburger Menu Styles */
-.header .mobile-menu {
-    display: none; /* Hide by default on larger screens */
-    cursor: pointer;
-}
-
-.header .nav-links {
-    display: none;
-}
-
-.header .nav-links.active {
-    display: flex;
-    flex-direction: column;
-    background: #1e2852;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    padding: 10px 0;
-    z-index: 999;
-}
-
-.header .nav-links.active li {
-    text-align: center;
-}
-
-.header .nav-links.active li a {
-    color: #fff;
-}
-
-.header .nav-links.active li a:hover {
-    color: #ccc;
-}
-
-/* Hamburger Animation */
-.header .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px;
-    transition: transform 0.4s ease;
-}
-
-.header .change .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.header .change .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.header .change .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Mobile Menu */
-.header .mobile-menu {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.header .nav-links {
-    display: none;
-}
-
-.header .nav-links.active {
-    display: flex;
-}
-
-/* Hero Section Styles */
-.hero {
+  }
+  
+  /* Hero Section Styles */
+  .hero {
     background: #1e2852;
     padding: 50px 0;
     text-align: center;
     color: #fff;
-}
-
-.hero .hero-content {
+  }
+  
+  .hero-content {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Aligns content to the left and right edges */
     flex-direction: column; /* Stack items vertically on small screens */
-}
-
-.hero .hero-info {
+  }
+  
+  .hero-info {
     text-align: center; /* Center text on small screens */
     margin-bottom: 20px;
-}
-
-.hero h2 {
+  }
+  
+  .hero h2 {
     margin-bottom: 10px;
-}
-
-.hero p {
+  }
+  
+  .hero p {
     font-size: 18px;
     margin-bottom: 20px;
-}
-
-.btn {
+  }
+  
+  .btn {
     display: inline-block;
     background: #fff;
     color: #1e2852;
@@ -181,155 +142,155 @@ body {
     border-radius: 5px;
     margin-top: 20px;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Transition for button */
-}
-
-.btn:hover {
+  }
+  
+  .btn:hover {
     background: #1e2852;
     color: #fff;
-}
-
-.hero-image img {
+  }
+  
+  .hero-image img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     margin: 20px 0;
     transition: transform 0.3s ease-in-out; /* Transition for image */
-}
-
-.hero-image img:hover {
+  }
+  
+  .hero-image img:hover {
     transform: scale(1.1); /* Increase image size on hover */
-}
-
-/* About Me Section Styles */
-.about {
+  }
+  
+  /* About Me Section Styles */
+  .about {
     padding: 50px 0;
     background: #fff;
-}
-
-.about h2 {
+  }
+  
+  .about h2 {
     text-align: center;
     margin-bottom: 20px;
-}
-
-.about-content {
+  }
+  
+  .about-content {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.about-image {
+  }
+  
+  .about-image {
     margin-right: 20px;
-}
-
-.rounded-image {
+  }
+  
+  .rounded-image {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
-}
-
-.about-text {
+  }
+  
+  .about-text {
     flex: 1;
-}
-
-/* Portfolio Section Styles */
-.portfolio {
+  }
+  
+  /* Portfolio Section Styles */
+  .portfolio {
     padding: 50px 0;
     background: #fff;
-}
-
-.portfolio h2 {
+  }
+  
+  .portfolio h2 {
     text-align: center;
     margin-bottom: 20px;
-}
-
-.portfolio-items {
+  }
+  
+  .portfolio-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
-}
-
-.portfolio-item {
+  }
+  
+  .portfolio-item {
     background: #f9f9f9;
     padding: 20px;
     border-radius: 5px;
     transition: transform 0.3s ease-in-out; /* Transition for portfolio items */
-}
-
-.portfolio-item img {
+  }
+  
+  .portfolio-item img {
     max-width: 100%;
     border-radius: 5px;
-}
-
-.portfolio-item h3 {
+  }
+  
+  .portfolio-item h3 {
     margin-top: 10px;
     font-size: 20px;
-}
-
-.portfolio-item p {
+  }
+  
+  .portfolio-item p {
     color: #666;
-}
-
-.portfolio-item:hover {
+  }
+  
+  .portfolio-item:hover {
     transform: translateY(-5px); /* Move item up on hover */
-}
-
-/* Footer Styles */
-.footer {
+  }
+  
+  /* Footer Styles */
+  .footer {
     background: #1e2852;
     color: #fff;
     padding: 20px 0;
     text-align: center;
-}
-
-.footer ul {
+  }
+  
+  .footer ul {
     list-style-type: none;
     padding: 0;
-}
-
-.footer ul li {
+  }
+  
+  .footer ul li {
     margin-bottom: 10px;
-}
-
-/* Hire Me Section Styles */
-.hire {
+  }
+  
+  /* Hire Me Section Styles */
+  .hire {
     padding: 50px 0;
     background: #f9f9f9;
-}
-
-.hire h2 {
+  }
+  
+  .hire h2 {
     text-align: center;
     margin-bottom: 20px;
-}
-
-form {
+  }
+  
+  form {
     max-width: 600px;
     margin: 0 auto;
-}
-
-.form-group {
+  }
+  
+  .form-group {
     margin-bottom: 20px;
-}
-
-label {
+  }
+  
+  label {
     display: block;
     margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-textarea {
+  }
+  
+  textarea {
     resize: vertical;
-}
-
-button[type="submit"] {
+  }
+  
+  button[type="submit"] {
     display: block;
     width: 100%;
     padding: 10px;
@@ -339,14 +300,14 @@ button[type="submit"] {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
+  }
+  
+  button[type="submit"]:hover {
     background-color: #0056b3;
-}
-
-/* Back to Top Button Styles */
-.back-to-top-btn {
+  }
+  
+  /* Back to Top Button Styles */
+  .back-to-top-btn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -360,110 +321,59 @@ button[type="submit"]:hover {
     cursor: pointer;
     z-index: 99;
     transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.back-to-top-btn:hover {
+  }
+  
+  .back-to-top-btn:hover {
     background-color: #0056b3;
     transform: scale(1.1);
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
     .container {
-        padding: 10px; /* Adjust container padding for smaller screens */
+      padding: 10px; /* Adjust container padding for smaller screens */
     }
-
+  
     .header-content {
-        flex-direction: column; /* Stack header content vertically on smaller screens */
+      flex-direction: column; /* Stack header content vertically on smaller screens */
     }
-
+  
     .header-info {
-        margin-bottom: 10px; /* Reduce margin for header info on smaller screens */
+      margin-bottom: 10px; /* Reduce margin for header info on smaller screens */
     }
-
-    .header nav .nav-links {
-        display: none; /* Hide nav links by default on smaller screens */
-        flex-direction: column;
-        width: 100%;
-        background: #1e2852;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        padding: 10px 0;
-        z-index: 999;
+  
+    .header nav ul {
+      margin-top: 20px; /* Add margin to top of nav items on smaller screens */
     }
-
-    .header nav .nav-links.active {
-        display: flex;
-    }
-
-    .header nav .nav-links li {
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    .header .mobile-menu {
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        transition: color 0.3s ease;
-    }
-
-    .header .nav-links {
-        display: none;
-    }
-
-    .header .nav-links.active {
-        display: flex;
-    }
-
-    .header .bar {
-        width: 25px;
-        height: 3px;
-        background-color: #fff;
-        margin: 5px;
-        transition: transform 0.4s ease;
-    }
-
-    .header .change .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .header .change .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .header .change .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-
+  
     .hero-content {
-        padding: 30px 0; /* Adjust padding for hero content on smaller screens */
+      padding: 30px 0; /* Adjust padding for hero content on smaller screens */
     }
-
+  
     .hero-info {
-        margin-bottom: 10px; /* Reduce margin for hero info on smaller screens */
+      margin-bottom: 10px; /* Reduce margin for hero info on smaller screens */
     }
-
+  
     .btn {
-        font-size: 14px; /* Reduce button font size on smaller screens */
-        padding: 8px 16px; /* Adjust button padding for smaller screens */
+      font-size: 14px; /* Reduce button font size on smaller screens */
+      padding: 8px 16px; /* Adjust button padding for smaller screens */
     }
-
+  
     .hero-image img {
-        width: 120px; /* Reduce image size on smaller screens */
-        height: 120px;
+      width: 120px; /* Reduce image size on smaller screens */
+      height: 120px;
     }
-
+  
     .portfolio-items {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid columns for portfolio items */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust grid columns for portfolio items */
     }
-
+  
     .portfolio-item {
-        padding: 15px; /* Adjust padding for portfolio items on smaller screens */
+      padding: 15px; /* Adjust padding for portfolio items on smaller screens */
     }
-
+  
     .portfolio-item h3 {
-        font-size: 18px; /* Reduce portfolio item title font size on smaller screens */
+      font-size: 18px; /* Reduce portfolio item title font size on smaller screens */
     }
-}
+  }
+  

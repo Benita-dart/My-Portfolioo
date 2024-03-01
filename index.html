@@ -16,12 +16,19 @@
                 <div class="header-info">
                     <img src="Images/benitaeze.png" alt="Logo" class="logo">
                 </div>
-                <input type="checkbox" id="menu-toggle" />
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-                <nav>
+                <div class="mobile-menu">
+                    <div class="menu-icon">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <nav class="nav-links">
                     <ul>
                         <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#hire">Hire Me</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
@@ -165,16 +172,17 @@
                 }
             });
         });
+
+        // Hamburger Menu Script
         document.addEventListener('DOMContentLoaded', function () {
-    const menuBtn = document.querySelector('.mobile-menu');
-    const navLinks = document.querySelector('.nav-links');
+            const menuBtn = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
 
-    menuBtn.addEventListener('click', function () {
-        menuBtn.classList.toggle('change');
-        navLinks.classList.toggle('active');
-    });
-});
-
+            menuBtn.addEventListener('click', function () {
+                menuBtn.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        });
 
         // Scroll to the top function
         function topFunction() {

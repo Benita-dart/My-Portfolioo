@@ -41,37 +41,77 @@ body {
     padding: 20px 0;
 }
 
-.header h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 24px;
+.header .logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
 }
 
-.header-content {
+.header .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Aligns content to the left and right edges */
 }
 
-.header-info {
+.header .header-info {
     flex: 1;
 }
 
-.header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center; /* Aligns nav items to center */
+.header nav .nav-links {
+    display: flex;
+    align-items: center;
 }
 
-.header nav ul li {
+.header nav .nav-links li {
     display: inline;
     margin-right: 20px;
 }
 
-.header nav ul li a {
+.header nav .nav-links li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hamburger Menu Styles */
+.header .mobile-menu {
+    display: none; /* Hide by default on larger screens */
+}
+
+.header .nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.header .nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hamburger Animation */
+.header .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: transform 0.4s ease;
+}
+
+.header .change .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.header .change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.header .change .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Hero Section Styles */
@@ -82,14 +122,14 @@ body {
     color: #fff;
 }
 
-.hero-content {
+.hero .hero-content {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Aligns content to the left and right edges */
     flex-direction: column; /* Stack items vertically on small screens */
 }
 
-.hero-info {
+.hero .hero-info {
     text-align: center; /* Center text on small screens */
     margin-bottom: 20px;
 }
@@ -203,6 +243,14 @@ body {
 
 .portfolio-item:hover {
     transform: translateY(-5px); /* Move item up on hover */
+}
+
+/* Footer Styles */
+.footer {
+    background: #1e2852;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
 
 .footer ul {

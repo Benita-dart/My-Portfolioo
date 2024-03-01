@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,9 +14,14 @@
         <div class="container">
             <div class="header-content">
                 <div class="header-info">
-                    <h1>My Portfolio</h1>
+                    <img src="Images/benitaeze.png" alt="Logo" class="logo">
                 </div>
                 <nav>
+                    <div class="mobile-menu">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
                     <ul>
                         <li><a href="#hero">Home</a></li>
                         <li><a href="#portfolio">Portfolio</a></li>
@@ -163,6 +168,16 @@
                 }
             });
         });
+        document.addEventListener('DOMContentLoaded', function () {
+    const menuBtn = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuBtn.addEventListener('click', function () {
+        menuBtn.classList.toggle('change');
+        navLinks.classList.toggle('active');
+    });
+});
+
 
         // Scroll to the top function
         function topFunction() {

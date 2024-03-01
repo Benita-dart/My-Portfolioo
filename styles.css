@@ -1,3 +1,18 @@
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
 /* Reset CSS */
 * {
     margin: 0;
@@ -188,14 +203,6 @@ body {
 
 .portfolio-item:hover {
     transform: translateY(-5px); /* Move item up on hover */
-}
-
-/* Footer Styles */
-.footer {
-    background: #1e2852;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
 }
 
 .footer ul {

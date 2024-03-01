@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -148,6 +148,20 @@
             } else {
                 backToTopBtn.style.display = "none";
             }
+
+            // Slide in Portfolio items when they come into view
+            var portfolioItems = document.querySelectorAll('.portfolio-item');
+
+            portfolioItems.forEach(function(item) {
+                var itemPosition = item.getBoundingClientRect().top;
+                var screenPosition = window.innerHeight / 1.2; // Adjust this value as needed
+
+                if (itemPosition < screenPosition) {
+                    item.classList.add('slide-in');
+                } else {
+                    item.classList.remove('slide-in');
+                }
+            });
         });
 
         // Scroll to the top function

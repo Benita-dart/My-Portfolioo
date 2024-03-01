@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Typed.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -120,10 +122,10 @@
         </div>
     </footer>
 
-    <!-- Typed.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    
-    <!-- Custom Script for Typing Effect -->
+    <!-- Back to Top Button -->
+    <button id="back-to-top-btn" class="btn back-to-top-btn">Back to Top</button>
+
+    <!-- Custom Script for Typing Effect and Back to Top Button -->
     <script>
         var typed = new Typed('#typed-text', {
             strings: ["Hi, I'm Benita Eze"],
@@ -131,12 +133,13 @@
             backSpeed: 20, // backspacing speed in milliseconds
             loop: false // loop the typing animation
         });
+
         // Back to Top button script
         var backToTopBtn = document.getElementById("back-to-top-btn");
 
         window.addEventListener("scroll", function() {
             // Show or hide the button based on scroll position
-            if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 20) {
+            if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
                 backToTopBtn.style.display = "block";
             } else {
                 backToTopBtn.style.display = "none";
@@ -148,7 +151,6 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         });
-
     </script>
 </body>
 </html>

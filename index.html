@@ -174,21 +174,22 @@
         });
 
         // Hamburger Menu Script
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuBtn = document.querySelector('.mobile-menu');
-            const navLinks = document.querySelector('.nav-links');
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuBtn = document.querySelector('.menu-icon');
+                const navLinks = document.querySelector('.nav-links');
 
-            menuBtn.addEventListener('click', function () {
-                menuBtn.classList.toggle('active');
-                navLinks.classList.toggle('active');
+                menuBtn.addEventListener('click', function () {
+                    menuBtn.classList.toggle('change');
+                    navLinks.classList.toggle('active');
+                });
             });
-        });
 
-        // Scroll to the top function
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
+            // Scroll to the top function
+            function topFunction() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
+
     </script>
 </body>
 </html>

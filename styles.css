@@ -1,40 +1,46 @@
 /* Hamburger Menu Styles */
-#menu-toggle {
-    display: none; /* Hide the checkbox */
-}
-
-/* Hamburger Icon Styles */
 .menu-icon {
     display: block;
     font-size: 24px;
     cursor: pointer;
 }
 
-/* Slide-in Menu Styles */
-.header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+.header nav .nav-links {
     display: none; /* Hide the menu by default */
 }
 
 /* Show Menu when Checkbox is checked */
-#menu-toggle:checked + .header nav ul {
-    display: block;
-    animation: slideIn 0.5s forwards;
+.menu-icon.change + .header nav .nav-links {
+    display: flex;
+    flex-direction: column;
+    background: #1e2852;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 999;
 }
 
-/* Slide-in Animation */
-@keyframes slideIn {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Hamburger Animation */
+.menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: transform 0.4s ease;
+}
+
+.menu-icon.change .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.change .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-icon.change .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Reset CSS */
@@ -343,7 +349,51 @@ button[type="submit"]:hover {
     }
 
     .header nav ul {
-        margin-top: 20px; /* Add margin to top of nav items on smaller screens */
+        display: none; /* Hide nav links by default on smaller screens */
+    }
+
+    .header nav ul.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background: #1e2852;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    .header nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .menu-icon .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: transform 0.4s ease;
+    }
+
+    .menu-icon.change .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-icon.change .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.change .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     .hero-content {

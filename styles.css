@@ -114,6 +114,22 @@ body {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
+/* Mobile Menu */
+.header .mobile-menu {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.header .nav-links {
+    display: none;
+}
+
+.header .nav-links.active {
+    display: flex;
+}
+
 /* Hero Section Styles */
 .hero {
     background: #1e2852;
@@ -338,7 +354,6 @@ button[type="submit"]:hover {
     transform: scale(1.1);
 }
 
-
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -353,8 +368,61 @@ button[type="submit"]:hover {
         margin-bottom: 10px; /* Reduce margin for header info on smaller screens */
     }
 
-    .header nav ul {
-        margin-top: 20px; /* Add margin to top of nav items on smaller screens */
+    .header nav .nav-links {
+        display: none; /* Hide navigation links by default on smaller screens */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #1e2852;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .header nav .nav-links.active {
+        display: flex; /* Show nav links when active (hamburger menu clicked) */
+    }
+
+    .header .mobile-menu {
+        display: flex; /* Display hamburger menu button */
+    }
+
+    .header .nav-links li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .header .nav-links li a {
+        color: #fff;
+        padding: 10px;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+    }
+
+    .header .nav-links li a:hover {
+        background-color: #304873;
+    }
+
+    .header .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: transform 0.4s ease;
+    }
+
+    .header .change .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .header .change .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header .change .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
     }
 
     .hero-content {
@@ -385,5 +453,9 @@ button[type="submit"]:hover {
 
     .portfolio-item h3 {
         font-size: 18px; /* Reduce portfolio item title font size on smaller screens */
+    }
+
+    .back-to-top-btn {
+        display: block; /* Show back-to-top button on smaller screens */
     }
 }
